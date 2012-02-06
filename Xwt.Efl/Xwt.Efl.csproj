@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B05D5F11-99F2-4DC4-A166-209B95194862}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Xwt.Efl</RootNamespace>
+    <AssemblyName>Xwt.Efl</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="libecoreevas-sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=41d3ecb8b6cd0cc2">
+      <Private>False</Private>
+      <Package>ecoreevas-sharp</Package>
+    </Reference>
+    <Reference Include="libecore-sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=41d3ecb8b6cd0cc2">
+      <Private>False</Private>
+      <Package>ecore-sharp</Package>
+    </Reference>
+    <Reference Include="libedje-sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=41d3ecb8b6cd0cc2">
+      <Private>False</Private>
+      <Package>edje-sharp</Package>
+    </Reference>
+    <Reference Include="libefl-sharp-common, Version=0.1.1.0, Culture=neutral, PublicKeyToken=41d3ecb8b6cd0cc2">
+      <Private>False</Private>
+      <Package>efl-sharp-common</Package>
+    </Reference>
+    <Reference Include="libeina-sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=41d3ecb8b6cd0cc2">
+      <Private>False</Private>
+      <Package>eina-sharp</Package>
+    </Reference>
+    <Reference Include="libelementary-sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=41d3ecb8b6cd0cc2">
+      <Private>False</Private>
+      <Package>elementary-sharp</Package>
+    </Reference>
+    <Reference Include="libevas-sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=41d3ecb8b6cd0cc2">
+      <Private>False</Private>
+      <Package>evas-sharp</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Xwt.EflBackend\EflEngine.cs" />
+    <Compile Include="Xwt.EflBackend\WindowBackend.cs" />
+    <Compile Include="Xwt.EflBackend\ButtonBackend.cs" />
+    <Compile Include="Xwt.EflBackend\WidgetBackend.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Xwt.EflBackend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xwt\Xwt.csproj">
+      <Project>{92494904-35FA-4DC9-BDE9-3A3E87AC49D3}</Project>
+      <Name>Xwt</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
